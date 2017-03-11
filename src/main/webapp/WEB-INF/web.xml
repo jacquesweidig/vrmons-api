@@ -12,19 +12,6 @@
         <servlet-name>javax.ws.rs.core.Application</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
-        
-    <servlet>
-            
-        <description>
-        </description>
-        <display-name>TestServlet</display-name>
-        <servlet-name>TestServlet</servlet-name>
-        <servlet-class>example.nosql.AttachServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/TestServlet</url-pattern>
-    </servlet-mapping>
 
 <welcome-file-list>
     <welcome-file>index.html</welcome-file>
