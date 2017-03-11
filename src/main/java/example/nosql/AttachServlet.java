@@ -30,11 +30,9 @@ public class AttachServlet extends HttpServlet {
 			throws ServletException, IOException {
 		Part part = request.getPart("file");
 
-		String id = request.getParameter("id");
-		String name = request.getParameter("name");
-		String value = request.getParameter("value");
-		String fileName = request.getParameter("filename");
-
+		String caseName = request.getParameter("caseName");
+		int mark = Integer.valueOf(request.getParameter("mark"));
+		
 		Database db = null;
 		try {
 			db = CloudantClientMgr.getDB();
@@ -46,26 +44,10 @@ public class AttachServlet extends HttpServlet {
 
 		ResourceServlet servlet = new ResourceServlet();
 
-		JsonObject resultObject = servlet.create(db, id, name, value, part, fileName);
+		JsonObject resultObject = servlet.create(db, caseName, mark);
 
 		System.out.println("Upload completed.");
 
 		response.getWriter().println(resultObject.toString());
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-		String key = request.getParameter("key");
-
-		Document fav = CloudantClientMgr.getDB().find(Document.class, id, new Params().attachments());
-
-		OutputStream output = response.getOutputStream();
-		Attachment attachment = fav.getAttachments().get(URLEncoder.encode(key, "UTF-8"));
-		String attachmentData = attachment.getData();
-		response.setContentType(attachment.getContentType());
-		output.write(Base64.decodeBase64(attachmentData));
-
-	}
-
 }
