@@ -27,12 +27,14 @@ import com.cloudant.client.api.Database;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.internal.LinkedTreeMap;
+import java.util.logging.Logger;
 
 @Path("/favorites")
 /**
  * CRUD service of todo list table. It uses REST style.
  */
 public class ResourceServlet {
+private static final Logger log = Logger.getLogger(ResourceServlet.class.getName());
 
 	public ResourceServlet() {
 	}
@@ -40,7 +42,7 @@ public class ResourceServlet {
 	@POST
 	public Response create(@FormParam("caseName") String caseName, @FormParam("mark") int mark)
 			throws Exception {
-
+               log.severe("Youpi Tralala !!!!!!!!!");     
 		Database db = null;
 		try {
 			db = getDB();
