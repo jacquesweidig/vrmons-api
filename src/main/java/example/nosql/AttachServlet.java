@@ -19,6 +19,7 @@ import com.cloudant.client.api.model.Document;
 import com.cloudant.client.api.model.Params;
 import com.cloudant.client.org.lightcouch.Attachment;
 import com.google.gson.JsonObject;
+import java.util.logging.Logger;
 
 @WebServlet("/attach")
 @MultipartConfig()
@@ -26,9 +27,11 @@ public class AttachServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+        private static final Logger log = Logger.getLogger(AttachServlet.class.getName());
+        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-            System.out.println("POWAAAAAAAA");
+            log.severe("Youpi Tralala");
 		String caseName = request.getParameter("caseName");
 		int mark = Integer.valueOf(request.getParameter("mark"));
 		
