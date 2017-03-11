@@ -26,8 +26,6 @@
         <url-pattern>
             /TestServlet</url-pattern>
     </servlet-mapping>
-            
-</servlet>
 
 <welcome-file-list>
     <welcome-file>index.html</welcome-file>
