@@ -9,9 +9,14 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>javax.ws.rs.core.Application</servlet-name>
+        <servlet-name>example.nosql.AttachServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
+<<<<<<< Upstream, based on 5b3c7cb8c10b8d1aa95e1894f80824f9c82a6210
     </servlet-mapping>
+=======
+    </servlet-mapping>          
+</servlet>
+>>>>>>> cdc3ebb Test 4
 
 <welcome-file-list>
     <welcome-file>index.html</welcome-file>
