@@ -28,8 +28,7 @@ public class AttachServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Part part = request.getPart("file");
-
+            System.out.println("POWAAAAAAAA");
 		String caseName = request.getParameter("caseName");
 		int mark = Integer.valueOf(request.getParameter("mark"));
 		
@@ -45,8 +44,6 @@ public class AttachServlet extends HttpServlet {
 		ResourceServlet servlet = new ResourceServlet();
 
 		JsonObject resultObject = servlet.create(db, caseName, mark);
-
-		System.out.println("Upload completed.");
 
 		response.getWriter().println(resultObject.toString());
 	}
